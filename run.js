@@ -10,4 +10,5 @@ serverInit()
   .fail(function (err) {
     console.log('Life Server start fail:');
     console.log(err);
+    console.log(err.stack);
   })

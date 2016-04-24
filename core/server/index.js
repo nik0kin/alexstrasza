@@ -3,9 +3,11 @@
 // Module dependencies
 var express     = require('express');
 var Q = require('q');
+
+var Bookshelf = require('./dbconnect');
 var i18n = require('./i18n');
 var middleware  = require('./middleware');
-//var models = require('./models');
+var models = require('./models');
 var LifeServer = require('./life-server');
 
 
@@ -27,7 +29,7 @@ function init(options) {
   // Load our config.js file from the local file system.
   return Q().then(function () {
     // Initialise the models
-    //models.init();
+    models.init();
   }).then(function () {
       // ##Configuration
 

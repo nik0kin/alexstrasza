@@ -1,15 +1,8 @@
 // from http://blog.ragingflame.co.za/2014/7/21/using-nodejs-with-mysql
 
-var knex = require('knex')({
-    client: 'pg',
-    connection: {
-      host     : 'localhost',
-      user     : 'drunk',
-      password : 'drunk',
-      database : 'drunk',
-      charset  : 'utf8'
-  }
-});
+var dbConfig = require('./core/server/config').database;
+
+var knex = require('knex')(dbConfig);
 var Schema = require('./schema');
 var sequence = require('when/sequence');
 var _ = require('lodash');

@@ -12,6 +12,7 @@ apiRoutes = function apiRoutes(middleware) {
   // alias delete with del
   router.del = router.delete;
 
+  router.get('/heartbeat', api.http(api.heartbeat));
 
   // ## Achievements
   //router.get('/achievements', authenticatePublic, api.http(api.posts.browse));

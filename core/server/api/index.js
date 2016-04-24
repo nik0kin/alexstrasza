@@ -2,6 +2,7 @@
 // based on patterns from Ghost - https://github.com/TryGhost/Ghost/blob/master/core/server/api/index.js 
 
 var _ = require('lodash');
+var Q = require('q');
 
 var achievements = require('./achievements');
 
@@ -10,6 +11,13 @@ var http;
 
 init = function () {
 
+};
+
+heartbeat = function (object, options) {
+  return Q({
+    alive: true,
+    timestamp: Date.now()
+  });
 };
 
 http = function http(apiMethod) {
@@ -54,6 +62,7 @@ module.exports = {
     init: init,
     http: http,
     // API Endpoints
+    heartbeat: heartbeat,
     achievements: achievements,
     // conditions:
     // stats:
