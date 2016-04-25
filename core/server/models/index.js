@@ -18,7 +18,7 @@ models = [
 
 function init () {
   //exports.Base = require('./base');
-  exports.Bookshelf = require('../dbconnect');
+  exports.lifeBookshelf = require('../dbconnect');
 
   models.forEach(function (name) {
     _.extend(exports, require('./' + name));

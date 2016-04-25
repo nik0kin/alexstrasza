@@ -1,17 +1,21 @@
 // from http://blog.ragingflame.co.za/2014/12/16/building-a-simple-api-with-express-and-bookshelfjs comments
 
-var Bookshelf = null;
+var lifeBookshelf = null;
 
 var dbConfig = require('./config').database;
 
 module.exports = (function () {
-  if (Bookshelf) {
-    return Bookshelf;
+  if (lifeBookshelf) {
+    return lifeBookshelf;
   }
 
   var knex = require('knex')(dbConfig);
 
-  Bookshelf = require('bookshelf')(knex);
+  lifeBookshelf = require('bookshelf')(knex);
 
-  return Bookshelf;
+  // Load the Bookshelf registry plugin, which helps us avoid circular dependencies
+  lifeBookshelf.plugin('registry');
+
+
+  return lifeBookshelf;
 })();

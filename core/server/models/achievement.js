@@ -1,17 +1,17 @@
-var Bookshelf = require('./').Bookshelf;
+var lifeBookshelf = require('./').lifeBookshelf;
 
 var Achievement;
 var Achievements;
 
-Achievement = Bookshelf.Model.extend({
+Achievement = lifeBookshelf.Model.extend({
   tableName: 'achievements',
 });
 
-Achievements = Bookshelf.Collection.extend({
+Achievements = lifeBookshelf.Collection.extend({
   model: Achievement
 });
 
 module.exports = {
-  Achievement: Achievement,
-  Achievements: Achievements
+  Achievement: lifeBookshelf.model(Achievement),
+  Achievements: lifeBookshelf.collection(Achievements)
 };
