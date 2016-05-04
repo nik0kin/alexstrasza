@@ -2,9 +2,37 @@ var Schema = {
   achievements: {
     id: {type: 'increments', nullable: false, primary: true},
     achieved: {type: 'boolean', nullable: false},
-    dateAchieved: {type: 'date', nullable: true},
+    date_achieved: {type: 'date', nullable: true},
     title: {type: 'string', nullable: false, maxlength: 150},
     category_id: {type: 'integer', nullable: false, unsigned: true}
+  },
+  achievement_conditions: {
+    id: {type: 'increments', nullable: false, primary: true},
+    achievement_id: {type: 'integer', nullable: false, unsigned: true},
+    description: {type: 'string', nullable: false, maxlength: 150},
+    type: {type: 'integer', nullable: false, unsigned: true},
+
+    // type: simple
+    achieved: {type: 'boolean', nullable: false},
+
+    // type: stat
+    stat_id: {type: 'integer', nullable: false, unsigned: true},
+    stat_operator: {type: 'string', nullable: false, maxlength: 10},
+    stat_operand: {type: 'integer', nullable: false},
+
+    // type: meta
+    achievement_required_id: {type: 'integer', nullable: false, unsigned: true},
+
+    // type: counter
+  //  count_current: {type: 'integer', nullable: false, unsigned: true},
+    count_goal: {type: 'integer', nullable: false, unsigned: true},
+
+    // type: overtime
+    overtime_goal: {type: 'integer', nullable: false, unsigned: true},
+    overtime_period_of_time: {type: 'string', nullable: false, maxlength: 10},
+    overtime_periods_of_time: {type: 'integer', nullable: false, unsigned: true},
+    overtime_stat: {type: 'integer', nullable: false, unsigned: true},
+
   },
   /*
   users: {

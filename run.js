@@ -1,4 +1,4 @@
-var serverInit = require('./core/server');
+var serverInit = require('./core');
 
 serverInit()
   .then(function (lifeServer) {

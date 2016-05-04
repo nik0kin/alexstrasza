@@ -26,7 +26,6 @@ function init(options) {
   // Initialize Internationalization
   i18n.init();
 
-  // Load our config.js file from the local file system.
   return Q().then(function () {
     // Initialise the models
     models.init();

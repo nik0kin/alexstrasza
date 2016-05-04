@@ -3,29 +3,35 @@ var path = require('path');
 // sloppy config
 var databasePath = path.resolve(__dirname, '../../..', 'content/data/');
 
-var config = {
-  database: {
-    client: 'sqlite3',
-    connection: {
-      filename: databasePath + '/life-dev.db'
+var configs = {
+  development: {
+    database: {
+      client: 'sqlite3',
+      connection: {
+        filename: databasePath + '/life-dev.db'
+      },
+      debug: false,
+      useNullAsDefault: true,
     },
-    debug: false,
-    useNullAsDefault: true,
-
-/* postgres
-    connection: {
-      host     : 'localhost',
-      user     : 'drunk',
-      password : 'drunk',
-      database : 'drunk',
-      charset  : 'utf8'
+    server: {
+      host: '127.0.0.1',
+      port: '2368'
     }
-*/
   },
-  server: {
-    host: '127.0.0.1',
-    port: '2368'
+  test: {
+    database: {
+      client: 'sqlite3',
+      connection: {
+        filename: databasePath + '/life-test.db'
+      },
+      debug: false,
+      useNullAsDefault: true,
+    },
+    server: {
+      host: '127.0.0.1',
+      port: '2468'
+    }
   }
 };
 
-module.exports = config;
+module.exports = configs[process.env.NODE_ENV];
