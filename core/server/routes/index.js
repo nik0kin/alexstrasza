@@ -15,7 +15,7 @@ apiRoutes = function apiRoutes(middleware) {
   router.get('/heartbeat', api.http(api.heartbeat));
 
   // ## Achievements
-  //router.get('/achievements', authenticatePublic, api.http(api.posts.browse));
+  router.get('/achievements', api.http(api.achievements.browse));
 
   router.post('/achievements', api.http(api.achievements.add));
   //router.get('/achievements/:id', authenticatePublic, api.http(api.achievements.read));

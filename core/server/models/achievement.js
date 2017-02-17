@@ -12,6 +12,6 @@ Achievements = lifeBookshelf.Collection.extend({
 });
 
 module.exports = {
-  Achievement: lifeBookshelf.model(Achievement),
-  Achievements: lifeBookshelf.collection(Achievements)
+  Achievement: Achievement,
+  Achievements: Achievements
 };

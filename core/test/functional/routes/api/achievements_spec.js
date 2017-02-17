@@ -31,7 +31,7 @@ describe('Achievement API', function () {
         description: '',
         category_id: 0,
         achieved: false,
-        conditions: [simpleCondition]
+      //  conditions: [simpleCondition]
       };
 
       request.post(testUtils.API.getApiQuery('achievements/'))
@@ -40,7 +40,25 @@ describe('Achievement API', function () {
         .end(function (err, res) {
           var jsonResponse = res.body;
 
-          console.log(jsonResponse);
+          should.not.exist(jsonResponse.errors);
+          should(jsonResponse.title).equal(newAchievement.title);
+
+          done()
+        });
+
+    });
+  });
+
+  describe('Browse', function () {
+    it('can return array of all achievements', function (done) {
+      request.get(testUtils.API.getApiQuery('achievements/'))
+        .send()
+        .expect(200)
+        .end(function (err, res) {
+          var jsonResponse = res.body;
+
+          should.not.exist(jsonResponse.errors);
+          should.exist(jsonResponse.length);
 
           done()
         });
