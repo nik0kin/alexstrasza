@@ -1,0 +1,13 @@
+Book flight to Amsterdam
+in order to attend VidCon
+because I want to become a better YouTuber.
+
+
+Next Task
+Outcome
+Desire
+
+
+Figure out where frontend will live & how its served
+in order to have a frontend
+so we can start building the frontend

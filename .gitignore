@@ -1,5 +1,7 @@
 
 tmp/
 node_modules/
+bower_components/
 
 content/data/
+core/webapp/dist/
