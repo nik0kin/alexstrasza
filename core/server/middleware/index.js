@@ -1,4 +1,6 @@
 var bodyParser  = require('body-parser');
+var express = require('express');
+var path = require('path');
 
 var errors = require('../errors');
 var routes = require('../routes');
@@ -19,6 +21,9 @@ setupMiddleware = function setupMiddleware(achieveApp) {
   achieveApp.use(bodyParser.urlencoded({extended: true, limit: '1mb'}));
 
   // ### Routing
+
+  achieveApp.use(express.static(path.join(__dirname, '../../webapp/dist/')))
+
   // Set up API routes
   achieveApp.use(routes.apiBaseUri, routes.api(middleware));
 

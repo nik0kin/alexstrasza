@@ -15,7 +15,7 @@ var configs = {
     },
     server: {
       host: '127.0.0.1',
-      port: '2368'
+      port: '1313'
     }
   },
   test: {
