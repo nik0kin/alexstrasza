@@ -10,6 +10,7 @@ cp ../../bower_components/foundation-sites/dist/css/foundation.css dist/vendor/c
 cp ../../bower_components/foundation-sites/dist/js/foundation.js dist/vendor/js
 cp ../../bower_components/jquery/dist/jquery.js dist/vendor/js
 cp ../../bower_components/what-input/dist/what-input.js dist/vendor/js
+cp ../../bower_components/handlebars/handlebars.js dist/vendor/js
 
 mkdir dist/css
 mkdir dist/js

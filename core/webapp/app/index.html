@@ -16,33 +16,6 @@
 
       <div class="achievement-list">
         <div class="row">
-          <div class="medium-4 columns">
-            <div class="card">
-              <div class="card-divider"></div>
-              <div class="card-section">
-                <h4> LOL </h4>
-                <p> Laugh out loud to achieve</p>
-              </div>
-            </div>
-          </div>
-          <div class="medium-4 columns">
-            <div class="card">
-              <div class="card-divider"></div>
-              <div class="card-section">
-                <h4> Be Silly </h4>
-                <p> Be silly to achieve</p>
-              </div>
-            </div>
-          </div>
-          <div class="medium-4 columns">
-            <div class="card">
-              <div class="card-divider"></div>
-              <div class="card-section">
-                <h4> Work hard </h4>
-                <p> Work hard to achieve</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -52,25 +25,38 @@
           <div class="row">
             <div class="medium-6 columns">
               <label>Title
-                <input type="text">
+                <input name="new-achievement-title" type="text">
               </label>
             </div>
             <div class="medium-6 columns">
               <label>Description
-                <input type="text">
+                <input name="new-achievement-description" type="text">
               </label>
             </div>
           </div>
           <div class="row">
-            <button type="button" class="success button float-right">Add</button>
+            <button type="submit" class="success button float-right">Add</button>
           </div>
         </form>
       </div>
     </main>
 
+    <div id="achievement-card-template" class="handlebars-template">
+      <div class="medium-4 columns">
+        <div class="card">
+          <div class="card-divider"></div>
+          <div class="card-section">
+            <h4> {{ title }} </h4>
+            <p> {{ description }} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="vendor/js/jquery.js"></script>
     <script src="vendor/js/what-input.js"></script>
     <script src="vendor/js/foundation.js"></script>
+    <script src="vendor/js/handlebars.js"></script>
 
     <script src="js/main.js"></script>
   </body>

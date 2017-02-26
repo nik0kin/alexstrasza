@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "foundation": "^5.5.3",
-    "foundation-sites": "^6.3.0"
+    "foundation-sites": "^6.3.0",
+    "handlebars": "^4.0.5"
   }
 }
